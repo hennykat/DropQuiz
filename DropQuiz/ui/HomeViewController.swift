@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func makeAddQuiz() -> Quiz {
-        return Quiz(name: "Create Quiz", icon: UIImage(named: "add")!)
+        return Quiz(name: "add", icon: UIImage(named: "add")!)
     }
     
     func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
