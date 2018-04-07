@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateBackground()
+        
         collectionView.register(UINib(nibName: ViewIdentifiers.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifiers.HomeQuizCell)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -87,5 +89,26 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         return quizList[index]
+    }
+    
+    func updateBackground() {
+        
+        for subview in self.view.subviews {
+            if subview is GradientView {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        guard let darkColour = UIColor(named: "dark")?.cgColor else {
+            return
+        }
+        
+        guard let secondaryColour = UIColor(named: "secondary")?.cgColor else {
+            return
+        }
+        
+        let gradientView = GradientView(frame: self.view.frame, colours: [darkColour, secondaryColour])
+        gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(gradientView, at: 0)
     }
 }
