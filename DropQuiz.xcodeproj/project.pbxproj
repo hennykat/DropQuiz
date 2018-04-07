@@ -19,6 +19,10 @@
 		B42CB0E6207869B7005029E5 /* HomeQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0E5207869B7005029E5 /* HomeQuizCell.swift */; };
 		B42CB0E820786A17005029E5 /* HomeQuizCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42CB0E720786A17005029E5 /* HomeQuizCell.xib */; };
 		B42CB0EB20786C9E005029E5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0EA20786C9E005029E5 /* AppConfig.swift */; };
+		B42CB0F020787315005029E5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0EF20787315005029E5 /* Storage.swift */; };
+		B42CB0F4207873C8005029E5 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0F3207873C8005029E5 /* QuizViewController.swift */; };
+		B42CB0F620787432005029E5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0F520787432005029E5 /* InfoViewController.swift */; };
+		B42CB0F820787443005029E5 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0F720787443005029E5 /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		B42CB0E5207869B7005029E5 /* HomeQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeQuizCell.swift; sourceTree = "<group>"; };
 		B42CB0E720786A17005029E5 /* HomeQuizCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeQuizCell.xib; sourceTree = "<group>"; };
 		B42CB0EA20786C9E005029E5 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		B42CB0EF20787315005029E5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		B42CB0F3207873C8005029E5 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		B42CB0F520787432005029E5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		B42CB0F720787443005029E5 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		B42CB0AE207864E5005029E5 /* DropQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				B42CB0EE207872C7005029E5 /* storage */,
 				B42CB0E920786C89005029E5 /* config */,
 				B42CB0DE20786531005029E5 /* model */,
 				B42CB0DD2078652C005029E5 /* ui */,
@@ -143,6 +152,9 @@
 				B42CB0E32078655A005029E5 /* HomeViewController.swift */,
 				B42CB0E5207869B7005029E5 /* HomeQuizCell.swift */,
 				B42CB0E720786A17005029E5 /* HomeQuizCell.xib */,
+				B42CB0F3207873C8005029E5 /* QuizViewController.swift */,
+				B42CB0F520787432005029E5 /* InfoViewController.swift */,
+				B42CB0F720787443005029E5 /* ReviewViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -162,6 +174,14 @@
 				B42CB0EA20786C9E005029E5 /* AppConfig.swift */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		B42CB0EE207872C7005029E5 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				B42CB0EF20787315005029E5 /* Storage.swift */,
+			);
+			path = storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42CB0E42078655A005029E5 /* HomeViewController.swift in Sources */,
+				B42CB0F020787315005029E5 /* Storage.swift in Sources */,
+				B42CB0F820787443005029E5 /* ReviewViewController.swift in Sources */,
 				B42CB0E6207869B7005029E5 /* HomeQuizCell.swift in Sources */,
 				B42CB0E22078654F005029E5 /* Question.swift in Sources */,
+				B42CB0F620787432005029E5 /* InfoViewController.swift in Sources */,
 				B42CB0EB20786C9E005029E5 /* AppConfig.swift in Sources */,
+				B42CB0F4207873C8005029E5 /* QuizViewController.swift in Sources */,
 				B42CB0B0207864E5005029E5 /* AppDelegate.swift in Sources */,
 				B42CB0E020786543005029E5 /* Quiz.swift in Sources */,
 			);
