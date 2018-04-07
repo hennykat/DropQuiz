@@ -3,18 +3,19 @@ import UIKit
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: IBOutlet
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let quizList = [Quiz]()
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,14 +36,33 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // TODO
-        return 0
+        return quizList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifiers.HomeQuizCell, for: indexPath) as! HomeQuizCell
         
+        guard let item = getQuizItem(indexPath) else {
+            return cell
+        }
+        
+        cell.nameLabel.text = item.name
+        cell.iconImageView.image = item.icon
+        
         return cell
+    }
+    
+    // MARK: Util
+    
+    func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
+        
+        let index = indexPath.row
+        if index < 0 || index >= quizList.count {
+            print("failed to get quiz item, invalid index")
+            return nil
+        }
+        
+        return quizList[index]
     }
 }

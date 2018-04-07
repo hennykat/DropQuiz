@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +14,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HomeQuizCell" id="B0n-Vz-Ufq" customClass="HomeQuizCell" customModule="DropQuiz" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SH-oX-Va7">
+                        <rect key="frame" x="29" y="72.5" width="43" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BS1-jd-QEX">
+                        <rect key="frame" x="25" y="14.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="BS1-jd-QEX" secondAttribute="height" multiplier="1:1" id="7Us-YC-bk4"/>
+                            <constraint firstAttribute="width" constant="50" id="tik-yl-pXs"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="2SH-oX-Va7" firstAttribute="centerX" secondItem="B0n-Vz-Ufq" secondAttribute="centerX" id="4V8-dA-1Qu"/>
+                <constraint firstItem="BS1-jd-QEX" firstAttribute="centerX" secondItem="B0n-Vz-Ufq" secondAttribute="centerX" id="59c-3V-gRq"/>
+                <constraint firstAttribute="bottom" secondItem="2SH-oX-Va7" secondAttribute="bottom" constant="8" id="5Ra-3K-ha6"/>
+                <constraint firstItem="2SH-oX-Va7" firstAttribute="top" secondItem="BS1-jd-QEX" secondAttribute="bottom" constant="8" id="mvE-Qx-ANN"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="1EG-ER-u7q"/>
+            <connections>
+                <outlet property="iconImageView" destination="BS1-jd-QEX" id="8do-mf-CFt"/>
+                <outlet property="nameLabel" destination="2SH-oX-Va7" id="Q85-q3-3lA"/>
+            </connections>
             <point key="canvasLocation" x="42" y="33"/>
         </collectionViewCell>
     </objects>
