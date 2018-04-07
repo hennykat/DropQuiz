@@ -4,17 +4,21 @@ import UIKit
 class Quiz {
     
     let name: String
-    let description: String
+    let description: String?
     let icon: UIImage
     let questions: [Question]
     // question index
     private var index: Int = 0
     
-    init(name: String, description: String, icon: UIImage, questions: [Question]) {
+    init(name: String, description: String?, icon: UIImage, questions: [Question]) {
         self.name = name
         self.description = description
         self.icon = icon
         self.questions = questions
+    }
+    
+    convenience init(name: String, icon: UIImage) {
+        self.init(name: name, description: nil, icon: icon, questions: [Question]())
     }
     
     func getCurrentQuestion() -> Question? {

@@ -6,12 +6,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let quizList = [Quiz]()
+    var quizList = [Quiz]()
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.register(UINib(nibName: ViewIdentifiers.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifiers.HomeQuizCell)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateQuizList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +64,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     // MARK: Util
+    
+    func updateQuizList() {
+        
+        // TODO: load quizzes
+        
+        let addQuiz = makeAddQuiz()
+        quizList.append(addQuiz)
+        collectionView.reloadData()
+    }
+    
+    func makeAddQuiz() -> Quiz {
+        return Quiz(name: "Create Quiz", icon: UIImage(named: "add")!)
+    }
     
     func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
         
