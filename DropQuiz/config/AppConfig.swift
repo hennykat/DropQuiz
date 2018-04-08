@@ -1,24 +1,29 @@
 import Foundation
 
-class StoryboardIdentifiers {
+class StoryboardIdentifier {
     static let Main = "Main"
 }
 
-class ViewIdentifiers {
+class ViewIdentifier {
     static let HomeQuizCell = "HomeQuizCell"
     static let AddViewController = "AddViewController"
 }
 
-class ImageNames {
+class ImageName {
     static let Add = "add"
     static let X = "x"
     static let Check = "check"
 }
 
-class ColourNames {
+class ColourName {
     static let Dark = "dark"
     static let Light = "light"
     static let Primary = "primary"
     static let Secondary = "secondary"
     static let Accent = "accent"
+}
+
+// TODO: localize
+class ViewString {
+    static let HomeAdd = "add"
 }

@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         updateBackground()
         
-        collectionView.register(UINib(nibName: ViewIdentifiers.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifiers.HomeQuizCell)
+        collectionView.register(UINib(nibName: ViewIdentifier.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.HomeQuizCell)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifiers.HomeQuizCell, for: indexPath) as! HomeQuizCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifier.HomeQuizCell, for: indexPath) as! HomeQuizCell
         
         guard let item = getQuizItem(indexPath) else {
             return cell
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func makeAddQuiz() -> Quiz {
-        return Quiz(name: "add", icon: UIImage(named: ImageNames.Add)!)
+        return Quiz(name: ViewString.HomeAdd, icon: UIImage(named: ImageName.Add)!)
     }
     
     func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
@@ -106,11 +106,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-        guard let darkColour = UIColor(named: ColourNames.Dark)?.cgColor else {
+        guard let darkColour = UIColor(named: ColourName.Dark)?.cgColor else {
             return
         }
         
-        guard let secondaryColour = UIColor(named: ColourNames.Secondary)?.cgColor else {
+        guard let secondaryColour = UIColor(named: ColourName.Secondary)?.cgColor else {
             return
         }
         
@@ -122,8 +122,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: Navigation
     
     func navToAddView() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifiers.Main, bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifiers.AddViewController) as! AddViewController
+        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.AddViewController) as! AddViewController
         self.present(viewController, animated: true, completion: nil)
     }
     

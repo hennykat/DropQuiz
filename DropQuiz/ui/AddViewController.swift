@@ -36,11 +36,11 @@ class AddViewController: UIViewController {
             }
         }
         
-        guard let primaryColour = UIColor(named: ColourNames.Primary)?.cgColor else {
+        guard let primaryColour = UIColor(named: ColourName.Primary)?.cgColor else {
             return
         }
         
-        guard let secondaryColour = UIColor(named: ColourNames.Secondary)?.cgColor else {
+        guard let secondaryColour = UIColor(named: ColourName.Secondary)?.cgColor else {
             return
         }
         
