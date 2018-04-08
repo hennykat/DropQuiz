@@ -11,6 +11,8 @@ class ViewIdentifiers {
 
 class ImageNames {
     static let Add = "add"
+    static let X = "x"
+    static let Check = "check"
 }
 
 class ColourNames {

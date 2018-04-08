@@ -4,10 +4,20 @@ class AddViewController: UIViewController {
     
     // MARK: IBOutlet
     
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        // save new quiz
+    }
+    
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateBackground()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -16,5 +26,26 @@ class AddViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func updateBackground() {
+        
+        for subview in self.view.subviews {
+            if subview is GradientView {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        guard let primaryColour = UIColor(named: ColourNames.Primary)?.cgColor else {
+            return
+        }
+        
+        guard let secondaryColour = UIColor(named: ColourNames.Secondary)?.cgColor else {
+            return
+        }
+        
+        let gradientView = GradientView(frame: self.view.frame, colours: [primaryColour, secondaryColour])
+        gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(gradientView, at: 0)
     }
 }

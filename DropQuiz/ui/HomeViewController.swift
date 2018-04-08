@@ -73,6 +73,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func updateQuizList() {
         
+        quizList.removeAll()
+        collectionView.reloadData()
+        
         // TODO: load quizzes
         
         let addQuiz = makeAddQuiz()

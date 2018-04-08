@@ -64,7 +64,42 @@
                     <view key="view" contentMode="scaleToFill" id="qSu-Xu-eq5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qsg-MN-NUM">
+                                <rect key="frame" x="16" y="551" width="343" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-0N-v1n">
+                                        <rect key="frame" x="0.0" y="26" width="171.5" height="48"/>
+                                        <color key="tintColor" name="dark"/>
+                                        <state key="normal" title="cancel" image="x">
+                                            <color key="titleColor" name="dark"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="0Pr-LD-3CL" eventType="touchUpInside" id="Hln-sw-fAO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bls-WL-6Qp">
+                                        <rect key="frame" x="171.5" y="26" width="171.5" height="48"/>
+                                        <color key="tintColor" name="dark"/>
+                                        <state key="normal" title="save" image="check">
+                                            <color key="titleColor" name="dark"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="0Pr-LD-3CL" eventType="touchUpInside" id="ntV-qk-qAw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Zgn-kt-ADT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="primary"/>
+                        <constraints>
+                            <constraint firstItem="WZj-bh-z7c" firstAttribute="trailing" secondItem="qsg-MN-NUM" secondAttribute="trailing" constant="16" id="QHh-TX-B2H"/>
+                            <constraint firstItem="qsg-MN-NUM" firstAttribute="leading" secondItem="WZj-bh-z7c" secondAttribute="leading" constant="16" id="ixk-x3-e0x"/>
+                            <constraint firstItem="WZj-bh-z7c" firstAttribute="bottom" secondItem="qsg-MN-NUM" secondAttribute="bottom" constant="16" id="mpx-w7-3Ik"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WZj-bh-z7c"/>
                     </view>
                 </viewController>
@@ -119,11 +154,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="check" width="48" height="48"/>
+        <image name="x" width="48" height="48"/>
+        <namedColor name="dark">
+            <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="dark">
             <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light">
             <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
