@@ -21,7 +21,7 @@ class HomeQuizCell: UICollectionViewCell {
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.cornerRadius = 50
+        self.layer.cornerRadius = self.frame.width / 2
     }
     
 }
