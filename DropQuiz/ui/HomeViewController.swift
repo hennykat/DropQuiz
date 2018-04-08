@@ -36,13 +36,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: UICollectionViewDelegate
     
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        // TODO
-        return false
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO
+        
+        // check if add
+        if indexPath.row == (quizList.count - 1) {
+            navToAddView()
+            return
+        }
+        
+        if let item = getQuizItem(indexPath) {
+            navToInfoView(item)
+        }
     }
     
     // MARK: UICollectionViewDataSource
@@ -77,7 +81,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func makeAddQuiz() -> Quiz {
-        return Quiz(name: "add", icon: UIImage(named: "add")!)
+        return Quiz(name: "add", icon: UIImage(named: ImageNames.Add)!)
     }
     
     func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
@@ -99,16 +103,28 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
         
-        guard let darkColour = UIColor(named: "dark")?.cgColor else {
+        guard let darkColour = UIColor(named: ColourNames.Dark)?.cgColor else {
             return
         }
         
-        guard let secondaryColour = UIColor(named: "secondary")?.cgColor else {
+        guard let secondaryColour = UIColor(named: ColourNames.Secondary)?.cgColor else {
             return
         }
         
         let gradientView = GradientView(frame: self.view.frame, colours: [darkColour, secondaryColour])
         gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(gradientView, at: 0)
+    }
+    
+    // MARK: Navigation
+    
+    func navToAddView() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifiers.Main, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifiers.AddViewController) as! AddViewController
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func navToInfoView(_ quiz: Quiz) {
+    
     }
 }

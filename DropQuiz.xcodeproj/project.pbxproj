@@ -24,6 +24,7 @@
 		B42CB0F620787432005029E5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0F520787432005029E5 /* InfoViewController.swift */; };
 		B42CB0F820787443005029E5 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0F720787443005029E5 /* ReviewViewController.swift */; };
 		B4B1D40A207980870053D676 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B1D409207980870053D676 /* GradientView.swift */; };
+		B4B52AE1207AB0960006AF5C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B52AE0207AB0960006AF5C /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		B42CB0F520787432005029E5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		B42CB0F720787443005029E5 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		B4B1D409207980870053D676 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		B4B52AE0207AB0960006AF5C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				B42CB0F520787432005029E5 /* InfoViewController.swift */,
 				B42CB0F720787443005029E5 /* ReviewViewController.swift */,
 				B4B1D409207980870053D676 /* GradientView.swift */,
+				B4B52AE0207AB0960006AF5C /* AddViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				B42CB0E42078655A005029E5 /* HomeViewController.swift in Sources */,
 				B42CB0F020787315005029E5 /* Storage.swift in Sources */,
+				B4B52AE1207AB0960006AF5C /* AddViewController.swift in Sources */,
 				B4B1D40A207980870053D676 /* GradientView.swift in Sources */,
 				B42CB0F820787443005029E5 /* ReviewViewController.swift in Sources */,
 				B42CB0E6207869B7005029E5 /* HomeQuizCell.swift in Sources */,
