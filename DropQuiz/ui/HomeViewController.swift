@@ -76,7 +76,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         quizList.removeAll()
         collectionView.reloadData()
         
-        // TODO: load quizzes
+        if let quizzes = Storage.shared.loadQuizList() {
+            quizList.append(contentsOf: quizzes)
+        }
         
         let addQuiz = makeAddQuiz()
         quizList.append(addQuiz)
