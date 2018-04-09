@@ -23,6 +23,10 @@ class ColourName {
     static let Accent = "accent"
 }
 
+class DocumentPath {
+    static let QuizListFile = "quizList"
+}
+
 // TODO: localize
 class ViewString {
     static let HomeAdd = "add"

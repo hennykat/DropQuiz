@@ -8,7 +8,7 @@ class Storage {
     
     init() {
         let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-        archiveURL = DocumentsDirectory.appendingPathComponent("quizList")
+        archiveURL = DocumentsDirectory.appendingPathComponent(DocumentPath.QuizListFile)
     }
     
     public func saveQuizList(quizList: [Quiz]) {
