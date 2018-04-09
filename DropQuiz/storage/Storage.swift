@@ -1,5 +1,5 @@
 import Foundation
 
 class Storage {
-    // TODO: store quizzes in documents
+    static let shared = Storage()
 }

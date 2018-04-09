@@ -2,11 +2,11 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var quizList = [Quiz]()
+    
     // MARK: IBOutlet
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var quizList = [Quiz]()
     
     // MARK: UIViewController
     
