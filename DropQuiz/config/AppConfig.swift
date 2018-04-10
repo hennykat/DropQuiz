@@ -27,7 +27,6 @@ class DocumentPath {
     static let QuizListFile = "quizList"
 }
 
-// TODO: localize
 class ViewString {
-    static let HomeAdd = "add"
+    static let HomeAdd = NSLocalizedString("home_add", comment: "")
 }
