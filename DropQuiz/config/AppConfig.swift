@@ -13,6 +13,7 @@ class ImageName {
     static let Add = "add"
     static let X = "x"
     static let Check = "check"
+    static let Default = "default"
 }
 
 class ColourName {
@@ -29,4 +30,7 @@ class DocumentPath {
 
 class ViewString {
     static let HomeAdd = NSLocalizedString("home_add", comment: "")
+    
+    static let AddName = NSLocalizedString("add_name", comment: "")
+    static let AddDescription = NSLocalizedString("add_description", comment: "")
 }

@@ -3,4 +3,8 @@
   DropQuiz
 */
 
+/* HomeViewController */
 "home_add" = "add";
+/* AddViewController */
+"add_name" = "name";
+"add_description" = "description";

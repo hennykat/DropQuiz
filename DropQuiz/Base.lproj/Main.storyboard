@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,23 +67,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qsg-MN-NUM">
-                                <rect key="frame" x="16" y="551" width="343" height="100"/>
+                                <rect key="frame" x="16" y="601" width="343" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-0N-v1n">
-                                        <rect key="frame" x="0.0" y="26" width="171.5" height="48"/>
-                                        <color key="tintColor" name="dark"/>
+                                        <rect key="frame" x="0.0" y="1" width="171.5" height="48"/>
+                                        <color key="tintColor" name="secondary"/>
                                         <state key="normal" title="cancel" image="x">
-                                            <color key="titleColor" name="dark"/>
+                                            <color key="titleColor" name="secondary"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonPressed:" destination="0Pr-LD-3CL" eventType="touchUpInside" id="Hln-sw-fAO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bls-WL-6Qp">
-                                        <rect key="frame" x="171.5" y="26" width="171.5" height="48"/>
-                                        <color key="tintColor" name="dark"/>
+                                        <rect key="frame" x="171.5" y="1" width="171.5" height="48"/>
+                                        <color key="tintColor" name="primary"/>
                                         <state key="normal" title="save" image="check">
-                                            <color key="titleColor" name="dark"/>
+                                            <color key="titleColor" name="primary"/>
                                         </state>
                                         <connections>
                                             <action selector="saveButtonPressed:" destination="0Pr-LD-3CL" eventType="touchUpInside" id="ntV-qk-qAw"/>
@@ -90,22 +91,85 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Zgn-kt-ADT"/>
+                                    <constraint firstAttribute="height" constant="50" id="Zgn-kt-ADT"/>
                                 </constraints>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nnx-uH-8Fo">
+                                <rect key="frame" x="120" y="36" width="231" height="30"/>
+                                <color key="tintColor" name="light"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jeG-Up-GS9"/>
+                                </constraints>
+                                <color key="textColor" name="light"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4r-W4-6pB">
+                                <rect key="frame" x="120" y="86" width="231" height="30"/>
+                                <color key="tintColor" name="light"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="i5Z-2E-8g0"/>
+                                </constraints>
+                                <color key="textColor" name="light"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-Jd-f3g">
+                                <rect key="frame" x="16" y="148" width="343" height="429"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-KL-qvI">
+                                <rect key="frame" x="24" y="44" width="80" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I7K-7a-nNG">
+                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <color key="tintColor" name="light"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="ZxQ-x6-c9a"/>
+                                            <constraint firstAttribute="width" secondItem="I7K-7a-nNG" secondAttribute="height" multiplier="1:1" id="lic-a3-963"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="primary"/>
+                                <constraints>
+                                    <constraint firstItem="I7K-7a-nNG" firstAttribute="centerX" secondItem="g7z-KL-qvI" secondAttribute="centerX" id="1lx-qn-K30"/>
+                                    <constraint firstAttribute="width" secondItem="g7z-KL-qvI" secondAttribute="height" multiplier="1:1" id="1wP-tE-q09"/>
+                                    <constraint firstItem="I7K-7a-nNG" firstAttribute="centerY" secondItem="g7z-KL-qvI" secondAttribute="centerY" id="INn-cg-RYa"/>
+                                    <constraint firstAttribute="width" constant="80" id="RkY-de-SRd"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" name="primary"/>
+                        <color key="backgroundColor" name="dark"/>
                         <constraints>
+                            <constraint firstItem="s4r-W4-6pB" firstAttribute="leading" secondItem="g7z-KL-qvI" secondAttribute="trailing" constant="16" id="424-db-s51"/>
+                            <constraint firstItem="WZj-bh-z7c" firstAttribute="trailing" secondItem="3iH-Jd-f3g" secondAttribute="trailing" constant="16" id="CIy-PR-vI4"/>
+                            <constraint firstItem="qsg-MN-NUM" firstAttribute="top" secondItem="3iH-Jd-f3g" secondAttribute="bottom" constant="24" id="Iol-9v-OAo"/>
+                            <constraint firstItem="3iH-Jd-f3g" firstAttribute="leading" secondItem="WZj-bh-z7c" secondAttribute="leading" constant="16" id="Q7s-2N-rQ2"/>
                             <constraint firstItem="WZj-bh-z7c" firstAttribute="trailing" secondItem="qsg-MN-NUM" secondAttribute="trailing" constant="16" id="QHh-TX-B2H"/>
+                            <constraint firstItem="nnx-uH-8Fo" firstAttribute="top" secondItem="g7z-KL-qvI" secondAttribute="top" constant="-8" id="QvK-3h-4kL"/>
+                            <constraint firstItem="nnx-uH-8Fo" firstAttribute="leading" secondItem="g7z-KL-qvI" secondAttribute="trailing" constant="16" id="RWY-kB-CCa"/>
+                            <constraint firstItem="WZj-bh-z7c" firstAttribute="trailing" secondItem="nnx-uH-8Fo" secondAttribute="trailing" constant="24" id="dx9-iR-ITr"/>
+                            <constraint firstItem="WZj-bh-z7c" firstAttribute="trailing" secondItem="s4r-W4-6pB" secondAttribute="trailing" constant="24" id="fo6-AH-KVM"/>
+                            <constraint firstItem="g7z-KL-qvI" firstAttribute="leading" secondItem="WZj-bh-z7c" secondAttribute="leading" constant="24" id="gnG-c5-mfR"/>
                             <constraint firstItem="qsg-MN-NUM" firstAttribute="leading" secondItem="WZj-bh-z7c" secondAttribute="leading" constant="16" id="ixk-x3-e0x"/>
                             <constraint firstItem="WZj-bh-z7c" firstAttribute="bottom" secondItem="qsg-MN-NUM" secondAttribute="bottom" constant="16" id="mpx-w7-3Ik"/>
+                            <constraint firstItem="s4r-W4-6pB" firstAttribute="bottom" secondItem="g7z-KL-qvI" secondAttribute="bottom" constant="-8" id="oYC-1D-WCl"/>
+                            <constraint firstItem="g7z-KL-qvI" firstAttribute="top" secondItem="WZj-bh-z7c" secondAttribute="top" constant="24" id="wmx-51-4ZC"/>
+                            <constraint firstItem="3iH-Jd-f3g" firstAttribute="top" secondItem="g7z-KL-qvI" secondAttribute="bottom" constant="24" id="zkg-Rg-5ga"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WZj-bh-z7c"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="s4r-W4-6pB" id="ifa-lz-aRh"/>
+                        <outlet property="iconBackgroundView" destination="g7z-KL-qvI" id="A51-7Q-m2z"/>
+                        <outlet property="iconImageView" destination="I7K-7a-nNG" id="uyS-2D-9GP"/>
+                        <outlet property="nameTextField" destination="nnx-uH-8Fo" id="DLu-ZD-0x5"/>
+                        <outlet property="tableView" destination="3iH-Jd-f3g" id="iyk-RW-ibF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jy1-ed-hc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="786"/>
+            <point key="canvasLocation" x="32.799999999999997" y="785.75712143928047"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Yff-rT-U1u">
@@ -159,14 +223,20 @@
         <namedColor name="dark">
             <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="dark">
-            <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="light">
+            <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light">
             <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondary">
+            <color red="0.9137254901960784" green="0.50588235294117645" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
