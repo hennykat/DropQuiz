@@ -183,10 +183,10 @@
                                 <rect key="frame" x="127.5" y="44" width="120" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-G0-pc1">
-                                        <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                        <rect key="frame" x="15" y="15" width="90" height="90"/>
                                         <color key="tintColor" name="light"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Uxt-wl-g40"/>
+                                            <constraint firstAttribute="width" constant="90" id="Uxt-wl-g40"/>
                                             <constraint firstAttribute="width" secondItem="hGe-G0-pc1" secondAttribute="height" multiplier="1:1" id="wJU-az-z24"/>
                                         </constraints>
                                     </imageView>
@@ -219,7 +219,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vT4-6A-EsK">
                                 <rect key="frame" x="16" y="284" width="343" height="293"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pbA-1r-lyk">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
