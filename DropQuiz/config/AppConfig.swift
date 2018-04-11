@@ -7,6 +7,7 @@ class StoryboardIdentifier {
 class ViewIdentifier {
     static let HomeQuizCell = "HomeQuizCell"
     static let AddViewController = "AddViewController"
+    static let InfoViewController = "InfoViewController"
 }
 
 class ImageName {

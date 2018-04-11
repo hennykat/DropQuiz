@@ -80,6 +80,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             quizList.append(contentsOf: quizzes)
         }
         
+        // TODO: remove, for testing purposes
+        let testQuiz = Quiz(name: "test", description: "this is a test quiz", icon: UIImage(named: ImageName.Default), questions: [Question]())
+        quizList.append(testQuiz)
+        
         let addQuiz = makeAddQuiz()
         quizList.append(addQuiz)
         collectionView.reloadData()
@@ -130,6 +134,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func navToInfoView(_ quiz: Quiz) {
-    
+        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.InfoViewController) as! InfoViewController
+        viewController.quiz = quiz
+        self.present(viewController, animated: true, completion: nil)
     }
 }
