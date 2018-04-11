@@ -81,7 +81,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         // TODO: remove, for testing purposes
+        let testQuestion1 = Question(question: "What is sushi?", answers: ["raw fish", "vegetables", "milk", "monkeys"], index: 0)
+        let testQuestion2 = Question(question: "What is green?", answers: ["tomato", "onion", "lettuce", "nuts"], index: 2)
+        let testQuestion3 = Question(question: "What is food?", answers: ["grass", "dirt", "rocks", "sushi"], index: 3)
         let testQuiz = Quiz(name: "test", description: "this is a test quiz", icon: UIImage(named: ImageName.Default), questions: [Question]())
+        testQuiz.questions.append(testQuestion1)
+        testQuiz.questions.append(testQuestion2)
+        testQuiz.questions.append(testQuestion3)
         quizList.append(testQuiz)
         
         let addQuiz = makeAddQuiz()
@@ -120,7 +126,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        let gradientView = GradientView(frame: self.view.frame, colours: [darkColour, secondaryColour])
+        let gradientView = GradientView(frame: self.view.frame, colours: [darkColour, secondaryColour], locations: [0.0, 1.0])
         gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(gradientView, at: 0)
     }

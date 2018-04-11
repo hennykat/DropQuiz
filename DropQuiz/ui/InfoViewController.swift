@@ -1,8 +1,9 @@
 import UIKit
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     public var quiz: Quiz?
+    private var questionList = [Question]()
     
     // MARK: IBOutlet
     
@@ -31,6 +32,11 @@ class InfoViewController: UIViewController {
             return
         }
         
+        questionList = infoQuiz.questions
+        questionCollectionView.register(UINib(nibName: ViewIdentifier.InfoQuestionCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.InfoQuestionCell)
+        questionCollectionView.delegate = self
+        questionCollectionView.dataSource = self
+        
         iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
         iconImageView.image = infoQuiz.icon ?? UIImage(named: ImageName.Default)
         nameLabel.text = infoQuiz.name
@@ -42,7 +48,6 @@ class InfoViewController: UIViewController {
         } else {
             numQuestionsLabel.text = String(numQuestions) + " questions"
         }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,5 +56,46 @@ class InfoViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let item = getQuestionItem(indexPath) {
+            // TODO: what happens on click?
+        }
+    }
+    
+    // MARK: UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return questionList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifier.InfoQuestionCell, for: indexPath) as! InfoQuestionCell
+        
+        guard let item = getQuestionItem(indexPath) else {
+            return cell
+        }
+        
+        cell.questionLabel.text = item.question
+        
+        return cell
+    }
+    
+    // MARK: Util
+    
+    func getQuestionItem(_ indexPath: IndexPath) -> Question? {
+        
+        let index = indexPath.row
+        if index < 0 || index >= questionList.count {
+            print("failed to get question item, invalid index")
+            return nil
+        }
+        
+        return questionList[index]
     }
 }

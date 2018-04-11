@@ -13,7 +13,7 @@ class Quiz: NSCoding {
     let name: String
     let description: String?
     let icon: UIImage?
-    let questions: [Question]
+    var questions: [Question]
     // question index
     private var index: Int = 0
     

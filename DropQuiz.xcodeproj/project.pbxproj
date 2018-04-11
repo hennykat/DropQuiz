@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B420258E207EB6F3005EBB6D /* InfoQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */; };
+		B4202590207EB70E005EBB6D /* InfoQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */; };
 		B42CB0B0207864E5005029E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0AF207864E5005029E5 /* AppDelegate.swift */; };
 		B42CB0B5207864E5005029E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42CB0B3207864E5005029E5 /* Main.storyboard */; };
 		B42CB0B7207864E5005029E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42CB0B6207864E5005029E5 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoQuestionCell.xib; sourceTree = "<group>"; };
+		B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoQuestionCell.swift; sourceTree = "<group>"; };
 		B42CB0AC207864E5005029E5 /* DropQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42CB0AF207864E5005029E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B42CB0B4207864E5005029E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				B4B1D409207980870053D676 /* GradientView.swift */,
 				B4B52AE0207AB0960006AF5C /* AddViewController.swift */,
 				B496E544207E91360048ADF6 /* UIExtension.swift */,
+				B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */,
+				B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				B49F038F207C491E002A3355 /* Localizable.strings in Resources */,
 				B42CB0BA207864E5005029E5 /* LaunchScreen.storyboard in Resources */,
 				B42CB0B7207864E5005029E5 /* Assets.xcassets in Resources */,
+				B420258E207EB6F3005EBB6D /* InfoQuestionCell.xib in Resources */,
 				B42CB0B5207864E5005029E5 /* Main.storyboard in Resources */,
 				B42CB0E820786A17005029E5 /* HomeQuizCell.xib in Resources */,
 			);
@@ -334,6 +341,7 @@
 				B42CB0F020787315005029E5 /* Storage.swift in Sources */,
 				B4B52AE1207AB0960006AF5C /* AddViewController.swift in Sources */,
 				B4B1D40A207980870053D676 /* GradientView.swift in Sources */,
+				B4202590207EB70E005EBB6D /* InfoQuestionCell.swift in Sources */,
 				B42CB0F820787443005029E5 /* ReviewViewController.swift in Sources */,
 				B42CB0E6207869B7005029E5 /* HomeQuizCell.swift in Sources */,
 				B42CB0E22078654F005029E5 /* Question.swift in Sources */,

@@ -5,9 +5,11 @@ class StoryboardIdentifier {
 }
 
 class ViewIdentifier {
+    static let HomeViewController = "HomeViewController"
     static let HomeQuizCell = "HomeQuizCell"
     static let AddViewController = "AddViewController"
     static let InfoViewController = "InfoViewController"
+    static let InfoQuestionCell = "InfoQuestionCell"
 }
 
 class ImageName {
@@ -15,6 +17,7 @@ class ImageName {
     static let X = "x"
     static let Check = "check"
     static let Default = "default"
+    static let Start = "start"
 }
 
 class ColourName {
