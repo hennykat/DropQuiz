@@ -171,6 +171,72 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="785.75712143928047"/>
         </scene>
+        <!--Question View Controller-->
+        <scene sceneID="l4j-oc-oh2">
+            <objects>
+                <viewController storyboardIdentifier="QuestionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AZe-Rq-nEQ" customClass="QuestionViewController" customModule="DropQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d6X-jx-RHz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUP-BA-gKS">
+                                <rect key="frame" x="16" y="148" width="343" height="503"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="accent"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Gr6-Tb-BcU">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gr6-Tb-BcU" id="anx-d8-G46">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xYM-6a-D1g">
+                                <rect key="frame" x="137" y="44" width="101" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUN-R0-A7l">
+                                        <rect key="frame" x="0.0" y="0.0" width="13" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" name="light"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRT-Ti-Vhx">
+                                        <rect key="frame" x="21" y="0.0" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" name="light"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="V2q-YL-rbh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="primary"/>
+                        <constraints>
+                            <constraint firstItem="yUP-BA-gKS" firstAttribute="leading" secondItem="YCq-ON-rlb" secondAttribute="leading" constant="16" id="4Jg-KK-e3v"/>
+                            <constraint firstItem="xYM-6a-D1g" firstAttribute="top" secondItem="YCq-ON-rlb" secondAttribute="top" constant="24" id="PWD-AU-Zlu"/>
+                            <constraint firstItem="yUP-BA-gKS" firstAttribute="top" secondItem="xYM-6a-D1g" secondAttribute="bottom" constant="24" id="Y3Q-KM-iXT"/>
+                            <constraint firstItem="xYM-6a-D1g" firstAttribute="centerX" secondItem="d6X-jx-RHz" secondAttribute="centerX" id="Z0B-ig-7OY"/>
+                            <constraint firstItem="YCq-ON-rlb" firstAttribute="trailing" secondItem="yUP-BA-gKS" secondAttribute="trailing" constant="16" id="kzO-Qt-jmW"/>
+                            <constraint firstItem="YCq-ON-rlb" firstAttribute="bottom" secondItem="yUP-BA-gKS" secondAttribute="bottom" constant="16" id="whG-Be-nl3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YCq-ON-rlb"/>
+                    </view>
+                    <connections>
+                        <outlet property="answerTableView" destination="yUP-BA-gKS" id="MPr-kK-4Hi"/>
+                        <outlet property="numQuestionLabel" destination="wUN-R0-A7l" id="fgC-wT-j1M"/>
+                        <outlet property="questionLabel" destination="qRT-Ti-Vhx" id="17v-eO-AoY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWe-sX-Dal" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="786"/>
+        </scene>
         <!--Info View Controller-->
         <scene sceneID="Yff-rT-U1u">
             <objects>
@@ -334,11 +400,20 @@
         <image name="check" width="48" height="48"/>
         <image name="start" width="48" height="48"/>
         <image name="x" width="48" height="48"/>
+        <namedColor name="accent">
+            <color red="0.6588235294117647" green="0.61568627450980395" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="dark">
             <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light">
             <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light">
+            <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

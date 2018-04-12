@@ -29,6 +29,7 @@
 		B49F038F207C491E002A3355 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B49F0391207C491E002A3355 /* Localizable.strings */; };
 		B4B1D40A207980870053D676 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B1D409207980870053D676 /* GradientView.swift */; };
 		B4B52AE1207AB0960006AF5C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B52AE0207AB0960006AF5C /* AddViewController.swift */; };
+		B4C6355E207ECF740028EA24 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6355D207ECF740028EA24 /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B49F0390207C491E002A3355 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B4B1D409207980870053D676 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B4B52AE0207AB0960006AF5C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		B4C6355D207ECF740028EA24 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				B496E544207E91360048ADF6 /* UIExtension.swift */,
 				B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */,
 				B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */,
+				B4C6355D207ECF740028EA24 /* QuestionViewController.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				B42CB0E22078654F005029E5 /* Question.swift in Sources */,
 				B42CB0F620787432005029E5 /* InfoViewController.swift in Sources */,
 				B42CB0EB20786C9E005029E5 /* AppConfig.swift in Sources */,
+				B4C6355E207ECF740028EA24 /* QuestionViewController.swift in Sources */,
 				B42CB0F4207873C8005029E5 /* QuizViewController.swift in Sources */,
 				B42CB0B0207864E5005029E5 /* AppDelegate.swift in Sources */,
 				B42CB0E020786543005029E5 /* Quiz.swift in Sources */,

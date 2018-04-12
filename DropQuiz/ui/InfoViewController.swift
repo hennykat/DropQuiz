@@ -1,6 +1,6 @@
 import UIKit
 
-class InfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class InfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate {
     
     public var quiz: Quiz?
     private var questionList = [Question]()
@@ -32,7 +32,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        questionList = infoQuiz.questions
+        questionList.append(contentsOf: infoQuiz.questions)
         questionCollectionView.register(UINib(nibName: ViewIdentifier.InfoQuestionCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.InfoQuestionCell)
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
@@ -50,12 +50,37 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        // remove popover
+        self.presentedViewController?.dismiss(animated: false, completion: nil)
+        
+        // don't show questions in landscape
+        switch UIDevice.current.orientation {
+          case .portrait:
+            questionCollectionView.isHidden = false
+          case .landscapeLeft:
+            questionCollectionView.isHidden = true
+          case .landscapeRight:
+            questionCollectionView.isHidden = true
+          default:
+            questionCollectionView.isHidden = false
+        }
+    }
+    
+    // MARK: UIPopoverPresentationControllerDelegate
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        self.questionCollectionView.isHidden = false
     }
     
     // MARK: UICollectionViewDelegate
@@ -63,7 +88,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if let item = getQuestionItem(indexPath) {
-            // TODO: what happens on click?
+            showQuestionPopover(indexPath.row, item)
         }
     }
     
@@ -97,5 +122,26 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         
         return questionList[index]
+    }
+    
+    // MARK: Nav
+    
+    func showQuestionPopover( _ index: Int, _ question: Question) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.QuestionViewController) as! QuestionViewController
+        viewController.index = index
+        viewController.question = question
+        
+        // setup popover
+        viewController.modalPresentationStyle = .popover
+        viewController.preferredContentSize = CGSize(width: self.questionCollectionView.frame.width - 48, height: self.questionCollectionView.frame.height)
+        viewController.popoverPresentationController?.delegate = self
+        viewController.popoverPresentationController?.sourceView = self.questionCollectionView
+        viewController.popoverPresentationController?.sourceRect = CGRect(x: self.questionCollectionView.bounds.midX, y: self.questionCollectionView.bounds.midY, width: 0, height: 0)
+        viewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        
+        self.questionCollectionView.isHidden = true
+        self.present(viewController, animated: true, completion: nil)
     }
 }

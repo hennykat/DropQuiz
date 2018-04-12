@@ -10,6 +10,7 @@ class ViewIdentifier {
     static let AddViewController = "AddViewController"
     static let InfoViewController = "InfoViewController"
     static let InfoQuestionCell = "InfoQuestionCell"
+    static let QuestionViewController = "QuestionViewController"
 }
 
 class ImageName {
