@@ -48,9 +48,9 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.text = item
         if question?.index == indexPath.row {
-            cell.textLabel?.textColor = UIColor(named: ColourName.Dark)
-        } else {
             cell.textLabel?.textColor = UIColor(named: ColourName.Light)
+        } else {
+            cell.textLabel?.textColor = UIColor(named: ColourName.Dark)
         }
         
         return cell
