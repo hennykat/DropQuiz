@@ -24,18 +24,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
             return
         }
         
-        questionLabel.text = infoQuestion.question
-        answerList.append(contentsOf: infoQuestion.answers)
-        
-        // TODO: abstract this
-        if let infoIndex = index {
-            numQuestionLabel.text = String(infoIndex + 1) + ". "
-        } else {
-            numQuestionLabel.text = ""
-        }
-        
-        answerTableView.dataSource = self
-        answerTableView.tableFooterView = UIView()
+        setupUI(infoQuestion)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +60,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
         return answerList.count
     }
     
-    // MARK: Util
+    // MARK: Table Util
     
     func getAnswerItem(_ indexPath: IndexPath) -> String? {
         
@@ -83,6 +72,8 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
         
         return answerList[index]
     }
+    
+    // MARK: UI
     
     func updateBackground() {
         
@@ -103,5 +94,20 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
         let gradientView = GradientView(frame: self.view.frame, colours: [accentColour, primaryColour, accentColour], locations: [0.0, 0.5, 1.0])
         gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(gradientView, at: 0)
+    }
+    
+    func setupUI(_ infoQuestion: Question) {
+        
+        questionLabel.text = infoQuestion.question
+        answerList.append(contentsOf: infoQuestion.answers)
+        
+        if let infoIndex = index {
+            numQuestionLabel.text = String(infoIndex + 1) + ". "
+        } else {
+            numQuestionLabel.text = ""
+        }
+        
+        answerTableView.dataSource = self
+        answerTableView.tableFooterView = UIView()
     }
 }

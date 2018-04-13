@@ -8,3 +8,6 @@
 /* AddViewController */
 "add_name" = "name";
 "add_description" = "description";
+/* InfoViewController */
+"info_question" = " question";
+"info_questions" = " questions";

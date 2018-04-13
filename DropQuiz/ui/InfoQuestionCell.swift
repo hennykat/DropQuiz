@@ -4,6 +4,7 @@ import UIKit
 class InfoQuestionCell: UICollectionViewCell {
     
     // MARK: IBOutlet
+    
     @IBOutlet weak var questionLabel: UILabel!
     
     // MARK: UICollectionViewCell

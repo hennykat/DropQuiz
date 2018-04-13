@@ -2,6 +2,8 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    public var quiz: Quiz?
+    
     // MARK: IBOutlet
     
     // MARK: UIViewController

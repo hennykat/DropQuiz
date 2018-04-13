@@ -11,6 +11,7 @@ class ViewIdentifier {
     static let InfoViewController = "InfoViewController"
     static let InfoQuestionCell = "InfoQuestionCell"
     static let QuestionViewController = "QuestionViewController"
+    static let QuizViewController = "QuizViewController"
 }
 
 class ImageName {
@@ -38,4 +39,7 @@ class ViewString {
     
     static let AddName = NSLocalizedString("add_name", comment: "")
     static let AddDescription = NSLocalizedString("add_description", comment: "")
+    
+    static let InfoQuestion = NSLocalizedString("info_question", comment: "")
+    static let InfoQuestions = NSLocalizedString("info_questions", comment: "")
 }

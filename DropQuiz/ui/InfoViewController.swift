@@ -19,7 +19,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        // TODO: start quiz
+        navToQuiz()
     }
     
     // MARK: UIViewController
@@ -32,22 +32,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        questionList.append(contentsOf: infoQuiz.questions)
-        questionCollectionView.register(UINib(nibName: ViewIdentifier.InfoQuestionCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.InfoQuestionCell)
-        questionCollectionView.delegate = self
-        questionCollectionView.dataSource = self
-        
-        iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
-        iconImageView.image = infoQuiz.icon ?? UIImage(named: ImageName.Default)
-        nameLabel.text = infoQuiz.name
-        descriptionLabel.text = infoQuiz.description ?? ""
-        // TODO: abstract this
-        let numQuestions = infoQuiz.questions.count
-        if numQuestions == 1 {
-            numQuestionsLabel.text = String(numQuestions) + " question"
-        } else {
-            numQuestionsLabel.text = String(numQuestions) + " questions"
-        }
+        setupUI(infoQuiz)
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,7 +96,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    // MARK: Util
+    // MARK: Collection Util
     
     func getQuestionItem(_ indexPath: IndexPath) -> Question? {
         
@@ -124,7 +109,27 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return questionList[index]
     }
     
-    // MARK: Nav
+    // MARK: UI
+    
+    func setupUI(_ infoQuiz: Quiz) {
+        
+        questionList.append(contentsOf: infoQuiz.questions)
+        questionCollectionView.register(UINib(nibName: ViewIdentifier.InfoQuestionCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.InfoQuestionCell)
+        questionCollectionView.delegate = self
+        questionCollectionView.dataSource = self
+        
+        iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
+        iconImageView.image = infoQuiz.icon ?? UIImage(named: ImageName.Default)
+        nameLabel.text = infoQuiz.name
+        descriptionLabel.text = infoQuiz.description ?? ""
+
+        let numQuestions = infoQuiz.questions.count
+        if numQuestions == 1 {
+            numQuestionsLabel.text = String(numQuestions) + ViewString.InfoQuestion
+        } else {
+            numQuestionsLabel.text = String(numQuestions) + ViewString.InfoQuestions
+        }
+    }
     
     func showQuestionPopover( _ index: Int, _ question: Question) {
         
@@ -142,6 +147,15 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         viewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
         
         self.questionCollectionView.isHidden = true
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // MARK: Nav
+    
+    func navToQuiz() {
+        let storyBoard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.QuizViewController) as! QuizViewController
+        viewController.quiz = quiz
         self.present(viewController, animated: true, completion: nil)
     }
 }

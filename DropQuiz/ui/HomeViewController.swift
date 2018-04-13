@@ -2,7 +2,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var quizList = [Quiz]()
+    private var quizList = [Quiz]()
     
     // MARK: IBOutlet
     
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    // MARK: Util
+    // MARK: Collection Util
     
     func updateQuizList() {
         
@@ -80,7 +80,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             quizList.append(contentsOf: quizzes)
         }
         
-        // TODO: remove, for testing purposes
+        // TODO: remove, for testing purposes v
         let testQuestion1 = Question(question: "What is sushi?", answers: ["raw fish", "vegetables", "milk", "monkeys"], index: 0)
         let testQuestion2 = Question(question: "What is green?", answers: ["tomato", "onion", "lettuce", "nuts"], index: 2)
         let testQuestion3 = Question(question: "What is food?", answers: ["grass", "dirt", "rocks", "sushi"], index: 3)
@@ -89,6 +89,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         testQuiz.questions.append(testQuestion2)
         testQuiz.questions.append(testQuestion3)
         quizList.append(testQuiz)
+        // TODO: remove, for testing purposes ^
         
         let addQuiz = makeAddQuiz()
         quizList.append(addQuiz)
@@ -109,6 +110,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         return quizList[index]
     }
+    
+    // MARK: UI
     
     func updateBackground() {
         
@@ -131,16 +134,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.view.insertSubview(gradientView, at: 0)
     }
     
-    // MARK: Navigation
+    // MARK: Nav
     
     func navToAddView() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let storyBoard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.AddViewController) as! AddViewController
         self.present(viewController, animated: true, completion: nil)
     }
     
     func navToInfoView(_ quiz: Quiz) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
+        let storyBoard = UIStoryboard(name: StoryboardIdentifier.Main, bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: ViewIdentifier.InfoViewController) as! InfoViewController
         viewController.quiz = quiz
         self.present(viewController, animated: true, completion: nil)

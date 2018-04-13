@@ -16,6 +16,7 @@ class AddViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         // TODO: save new quiz
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: UIViewController
@@ -23,11 +24,7 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
-        iconImageView.image = UIImage(named: ImageName.Default)
-        
-        nameTextField.attributedPlaceholder = NSAttributedString(string: ViewString.AddName, attributes: [NSAttributedStringKey.foregroundColor: UIColor(named: ColourName.Light) as Any])
-        descriptionTextField.attributedPlaceholder = NSAttributedString(string: ViewString.AddDescription, attributes: [NSAttributedStringKey.foregroundColor: UIColor(named: ColourName.Light) as Any])
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +39,17 @@ class AddViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: UI
+    
+    func setupUI() {
+        
+        iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
+        iconImageView.image = UIImage(named: ImageName.Default)
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(string: ViewString.AddName, attributes: [NSAttributedStringKey.foregroundColor: UIColor(named: ColourName.Light) as Any])
+        descriptionTextField.attributedPlaceholder = NSAttributedString(string: ViewString.AddDescription, attributes: [NSAttributedStringKey.foregroundColor: UIColor(named: ColourName.Light) as Any])
     }
     
 }
