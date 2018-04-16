@@ -171,6 +171,60 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="785.75712143928047"/>
         </scene>
+        <!--Icon Picker View Controller-->
+        <scene sceneID="Wq7-ty-BdB">
+            <objects>
+                <viewController storyboardIdentifier="IconPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0i0-tS-w3D" customClass="IconPickerViewController" customModule="DropQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FAd-q8-mRz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pick an icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaC-Xe-yNT">
+                                <rect key="frame" x="132.5" y="44" width="109" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" name="light"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eh8-Zg-ggs">
+                                <rect key="frame" x="16" y="92" width="343" height="551"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xdt-nf-P0Y">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JeO-XE-11D">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="primary"/>
+                        <constraints>
+                            <constraint firstItem="GaC-Xe-yNT" firstAttribute="centerX" secondItem="FAd-q8-mRz" secondAttribute="centerX" id="7u9-u8-VYC"/>
+                            <constraint firstItem="sbg-3m-bMz" firstAttribute="bottom" secondItem="eh8-Zg-ggs" secondAttribute="bottom" constant="24" id="F1d-aZ-aWy"/>
+                            <constraint firstItem="GaC-Xe-yNT" firstAttribute="top" secondItem="sbg-3m-bMz" secondAttribute="top" constant="24" id="Fws-gy-Gvw"/>
+                            <constraint firstItem="eh8-Zg-ggs" firstAttribute="leading" secondItem="sbg-3m-bMz" secondAttribute="leading" constant="16" id="MlM-vD-9Cf"/>
+                            <constraint firstItem="sbg-3m-bMz" firstAttribute="trailing" secondItem="eh8-Zg-ggs" secondAttribute="trailing" constant="16" id="hzv-nr-zdg"/>
+                            <constraint firstItem="eh8-Zg-ggs" firstAttribute="top" secondItem="GaC-Xe-yNT" secondAttribute="bottom" constant="24" id="oFi-kp-yZ5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sbg-3m-bMz"/>
+                    </view>
+                    <connections>
+                        <outlet property="iconCollectionView" destination="eh8-Zg-ggs" id="lNs-bI-KIW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAc-Et-xlz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="785.75712143928047"/>
+        </scene>
         <!--Question View Controller-->
         <scene sceneID="l4j-oc-oh2">
             <objects>
@@ -225,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWe-sX-Dal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="786"/>
+            <point key="canvasLocation" x="1396" y="786"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Yff-rT-U1u">
@@ -389,6 +443,12 @@
         </namedColor>
         <namedColor name="light">
             <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light">
+            <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.40392156862745099" green="0.72549019607843135" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

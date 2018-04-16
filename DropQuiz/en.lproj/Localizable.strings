@@ -8,6 +8,14 @@
 /* AddViewController */
 "add_name" = "name";
 "add_description" = "description";
+"add_save_alert_title" = "quiz is final after saving";
+"add_save_alert_msg" = "are you sure you want to save?";
+"add_save_alert_default" = "save";
+"add_save_alert_cancel" = "cancel";
+"add_cancel_alert_title" = "changes will be lost";
+"add_cancel_alert_msg" = "are you sure you want to cancel?";
+"add_cancel_alert_cancel" = "stay";
+"add_cancel_alert_destructive" = "cancel";
 /* InfoViewController */
 "info_question" = " question";
 "info_questions" = " questions";

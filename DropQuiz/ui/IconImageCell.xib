@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="IconImageCell" id="gsp-HK-HtQ" customClass="IconImageCell" customModule="DropQuiz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hVb-8R-KpB">
+                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                        <color key="tintColor" name="light"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hVb-8R-KpB" secondAttribute="height" multiplier="1:1" id="GKM-Pm-BEg"/>
+                            <constraint firstAttribute="width" constant="50" id="Say-ja-eve"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" name="dark"/>
+            <constraints>
+                <constraint firstItem="hVb-8R-KpB" firstAttribute="centerY" secondItem="gsp-HK-HtQ" secondAttribute="centerY" id="Tpj-0S-bCv"/>
+                <constraint firstItem="hVb-8R-KpB" firstAttribute="centerX" secondItem="gsp-HK-HtQ" secondAttribute="centerX" id="x3l-fx-JiT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="HNw-mT-Qi6"/>
+            <connections>
+                <outlet property="iconImageView" destination="hVb-8R-KpB" id="fnp-eX-KzA"/>
+            </connections>
+            <point key="canvasLocation" x="85" y="12"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="dark">
+            <color red="0.10980392156862745" green="0.16470588235294117" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light">
+            <color red="0.97254901960784312" green="0.99215686274509807" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
