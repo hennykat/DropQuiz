@@ -1,5 +1,6 @@
 import UIKit
 
+// TODO: this whole layout needs work
 class AddViewController: UIViewController, UIPopoverPresentationControllerDelegate, IconPickerDelegate {
     
     // MARK: IBOutlet

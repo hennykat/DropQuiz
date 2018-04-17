@@ -31,7 +31,9 @@ class IconPickerViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        delegate?.iconPicked(iconName: getIconName(indexPath))
+        if let imageName = UIUtil.getListItem(at: indexPath, iconNameList, defaultItem: ImageName.Default) {
+            delegate?.iconPicked(iconName: imageName)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -44,21 +46,11 @@ class IconPickerViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifier.IconImageCell, for: indexPath) as! IconImageCell
-        cell.iconImageView.image = UIImage(named: getIconName(indexPath))
         
-        return cell
-    }
-    
-    // MARK: Collection Util
-    
-    func getIconName(_ indexPath: IndexPath) -> String {
-        
-        let index = indexPath.row
-        if index < 0 || index >= iconNameList.count {
-            print("failed to get icon name, invalid index")
-            return ImageName.Default
+        if let imageName = UIUtil.getListItem(at: indexPath, iconNameList, defaultItem: ImageName.Default) {
+            cell.iconImageView.image = UIImage(named: imageName)
         }
-        
-        return iconNameList[index]
+
+        return cell
     }
 }

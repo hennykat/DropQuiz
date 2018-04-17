@@ -41,7 +41,7 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         
-        guard let item = getAnswerItem(indexPath) else {
+        guard let item = UIUtil.getListItem(at: indexPath, answerList) else {
             return cell
         }
         
@@ -58,19 +58,6 @@ class QuestionViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return answerList.count
-    }
-    
-    // MARK: Table Util
-    
-    func getAnswerItem(_ indexPath: IndexPath) -> String? {
-        
-        let index = indexPath.row
-        if index < 0 || index >= answerList.count {
-            print("failed to get answer item, invalid index")
-            return nil
-        }
-        
-        return answerList[index]
     }
     
     // MARK: UI

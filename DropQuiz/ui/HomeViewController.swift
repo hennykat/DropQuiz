@@ -44,7 +44,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
         
-        if let item = getQuizItem(indexPath) {
+        if let item = UIUtil.getListItem(at: indexPath, quizList) {
             navToInfoView(item)
         }
     }
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifier.HomeQuizCell, for: indexPath) as! HomeQuizCell
         
-        guard let item = getQuizItem(indexPath) else {
+        guard let item = UIUtil.getListItem(at: indexPath, quizList) else {
             return cell
         }
         
@@ -98,17 +98,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func makeAddQuiz() -> Quiz {
         return Quiz(name: ViewString.HomeAdd, icon: UIImage(named: ImageName.Add)!)
-    }
-    
-    func getQuizItem(_ indexPath: IndexPath) -> Quiz? {
-        
-        let index = indexPath.row
-        if index < 0 || index >= quizList.count {
-            print("failed to get quiz item, invalid index")
-            return nil
-        }
-        
-        return quizList[index]
     }
     
     // MARK: UI

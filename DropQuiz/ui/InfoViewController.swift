@@ -72,7 +72,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let item = getQuestionItem(indexPath) {
+        if let item = UIUtil.getListItem(at: indexPath, questionList) {
             showQuestionPopover(indexPath.row, item)
         }
     }
@@ -87,26 +87,13 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ViewIdentifier.InfoQuestionCell, for: indexPath) as! InfoQuestionCell
         
-        guard let item = getQuestionItem(indexPath) else {
+        guard let item = UIUtil.getListItem(at: indexPath, questionList) else {
             return cell
         }
         
         cell.questionLabel.text = item.question
         
         return cell
-    }
-    
-    // MARK: Collection Util
-    
-    func getQuestionItem(_ indexPath: IndexPath) -> Question? {
-        
-        let index = indexPath.row
-        if index < 0 || index >= questionList.count {
-            print("failed to get question item, invalid index")
-            return nil
-        }
-        
-        return questionList[index]
     }
     
     // MARK: UI

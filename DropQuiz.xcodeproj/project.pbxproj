@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4056DD12086A5FC0021D953 /* UIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4056DD02086A5FC0021D953 /* UIUtil.swift */; };
+		B4056DD42086A9FA0021D953 /* UIUtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4056DD32086A9FA0021D953 /* UIUtilTest.swift */; };
 		B420258E207EB6F3005EBB6D /* InfoQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */; };
 		B4202590207EB70E005EBB6D /* InfoQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */; };
 		B42CB0B0207864E5005029E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42CB0AF207864E5005029E5 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4056DD02086A5FC0021D953 /* UIUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtil.swift; sourceTree = "<group>"; };
+		B4056DD32086A9FA0021D953 /* UIUtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilTest.swift; sourceTree = "<group>"; };
 		B420258D207EB6F3005EBB6D /* InfoQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoQuestionCell.xib; sourceTree = "<group>"; };
 		B420258F207EB70E005EBB6D /* InfoQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoQuestionCell.swift; sourceTree = "<group>"; };
 		B42CB0AC207864E5005029E5 /* DropQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4056DD22086A9DF0021D953 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				B4056DD32086A9FA0021D953 /* UIUtilTest.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		B42CB0A3207864E5005029E5 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 		B42CB0C3207864E5005029E5 /* DropQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4056DD22086A9DF0021D953 /* ui */,
 				B42CB0C4207864E5005029E5 /* DropQuizTests.swift */,
 				B42CB0C6207864E5005029E5 /* Info.plist */,
 			);
@@ -185,6 +198,7 @@
 				B44268A0208422F300F00DE2 /* IconPickerViewController.swift */,
 				B44268A22084251A00F00DE2 /* IconImageCell.swift */,
 				B44268A42084254000F00DE2 /* IconImageCell.xib */,
+				B4056DD02086A5FC0021D953 /* UIUtil.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -364,6 +378,7 @@
 				B4C6355E207ECF740028EA24 /* QuestionViewController.swift in Sources */,
 				B42CB0F4207873C8005029E5 /* QuizViewController.swift in Sources */,
 				B42CB0B0207864E5005029E5 /* AppDelegate.swift in Sources */,
+				B4056DD12086A5FC0021D953 /* UIUtil.swift in Sources */,
 				B42CB0E020786543005029E5 /* Quiz.swift in Sources */,
 				B44268A1208422F300F00DE2 /* IconPickerViewController.swift in Sources */,
 			);
@@ -374,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42CB0C5207864E5005029E5 /* DropQuizTests.swift in Sources */,
+				B4056DD42086A9FA0021D953 /* UIUtilTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
