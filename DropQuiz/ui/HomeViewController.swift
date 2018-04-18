@@ -14,10 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         
         updateBackground()
-        
-        collectionView.register(UINib(nibName: ViewIdentifier.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.HomeQuizCell)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +99,40 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: UI
     
+    func setupUI() {
+        
+        collectionView.register(UINib(nibName: ViewIdentifier.HomeQuizCell, bundle: nil), forCellWithReuseIdentifier: ViewIdentifier.HomeQuizCell)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        // add long press delete
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cellLongPressed(gesture:)))
+        longPressGestureRecognizer.minimumPressDuration = 0.75
+        longPressGestureRecognizer.delaysTouchesBegan = true
+        self.collectionView.addGestureRecognizer(longPressGestureRecognizer)
+    }
+    
+    @objc func cellLongPressed(gesture : UILongPressGestureRecognizer!) {
+    
+        // only trigger on up
+        if gesture.state != .ended {
+            return
+        }
+        
+        // get list item
+        let position = gesture.location(in: self.collectionView)
+        if let indexPath = self.collectionView.indexPathForItem(at: position) {
+            
+            // check if add
+            if indexPath.row == (quizList.count - 1) {
+                return
+            }
+            
+            let quiz = UIUtil.getListItem(at: indexPath, quizList)
+            showDeleteAlert(quiz: quiz)
+        }
+    }
+    
     func updateBackground() {
         
         for subview in self.view.subviews {
@@ -121,6 +152,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let gradientView = GradientView(frame: self.view.frame, colours: [darkColour, secondaryColour], locations: [0.0, 1.0])
         gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(gradientView, at: 0)
+    }
+    
+    func showDeleteAlert(quiz: Quiz?) {
+        
+        guard let deleteQuiz = quiz else {
+            print("failed to show delete quiz, invalid quiz")
+            return
+        }
+        
+        let msg = ViewString.HomeDeleteAlertMsg + deleteQuiz.name + "?"
+        
+        let alert = UIAlertController(title: ViewString.HomeDeleteAlertTitle, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: ViewString.HomeDeleteAlertCancel, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: ViewString.HomeDeleteAlertDestructive, style: .destructive, handler: { action in
+            
+            Storage.shared.removeQuiz(quiz: deleteQuiz)
+            self.updateQuizList()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: Nav

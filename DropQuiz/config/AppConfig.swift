@@ -47,6 +47,10 @@ class DocumentPath {
 
 class ViewString {
     static let HomeAdd = NSLocalizedString("home_add", comment: "")
+    static let HomeDeleteAlertTitle = NSLocalizedString("home_delete_alert_title", comment: "")
+    static let HomeDeleteAlertMsg = NSLocalizedString("home_delete_alert_msg", comment: "")
+    static let HomeDeleteAlertCancel = NSLocalizedString("home_delete_alert_cancel", comment: "")
+    static let HomeDeleteAlertDestructive = NSLocalizedString("home_delete_alert_destructive", comment: "")
     
     static let AddName = NSLocalizedString("add_name", comment: "")
     static let AddDescription = NSLocalizedString("add_description", comment: "")

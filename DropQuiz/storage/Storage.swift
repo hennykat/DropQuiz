@@ -17,6 +17,22 @@ class Storage {
         saveQuizList(quizList: quizList)
     }
     
+    public func removeQuiz(quiz: Quiz) {
+        
+        var quizList = loadQuizList() ?? [Quiz]()
+        var count = 0
+        
+        for item in quizList {
+            if item.isEqual(quiz) {
+                quizList.remove(at: count)
+                break
+            }
+            
+            count += 1
+        }
+        saveQuizList(quizList: quizList)
+    }
+    
     public func saveQuizList(quizList: [Quiz]) {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(quizList, toFile: quizListPath)
         if !isSuccessfulSave {

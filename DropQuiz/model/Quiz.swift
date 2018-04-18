@@ -29,6 +29,31 @@ class Quiz: NSObject, NSCoding {
         self.init(name: name, information: nil, icon: icon, questions: [Question]())
     }
     
+    override func isEqual(_ object: Any?) -> Bool {
+        
+        guard let quiz = object as? Quiz else {
+            return false
+        }
+        
+        if quiz.name != self.name || quiz.information != self.information {
+            return false
+        }
+        
+        if quiz.icon != self.icon {
+            return false
+        }
+        
+        if quiz.questions.count != self.questions.count {
+            return false
+        }
+        
+        for (question1, question2) in zip(quiz.questions, self.questions) where !(question1.isEqual(question2))  {
+            return false
+        }
+        
+        return true
+    }
+    
     func getCurrentQuestion() -> Question? {
         
         if index < 0 || index >= questions.count {

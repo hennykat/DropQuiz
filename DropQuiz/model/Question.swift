@@ -27,6 +27,27 @@ class Question: NSObject, NSCoding {
         self.init(question: question, answers: answers, index: index, hint: nil)
     }
     
+    override func isEqual(_ object: Any?) -> Bool {
+        
+        guard let questionObj = object as? Question else {
+            return false
+        }
+        
+        if questionObj.question != self.question {
+            return false
+        }
+        
+        if questionObj.answers.count != self.answers.count {
+            return false
+        }
+        
+        for (answer1, answer2) in zip(questionObj.answers, self.answers) where answer1 != answer2 {
+            return false
+        }
+        
+        return true
+    }
+    
     // MARK: NSCoding
     
     func encode(with aCoder: NSCoder) {

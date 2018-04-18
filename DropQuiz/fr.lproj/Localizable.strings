@@ -5,6 +5,10 @@
 
 /* HomeViewController */
 "home_add" = "créer";
+"home_delete_alert_title" = "supprimer le quiz";
+"home_delete_alert_msg" = "êtes-vous sûr de vouloir supprimer ";
+"home_delete_alert_cancel" = "annuler";
+"home_delete_alert_destructive" = "supprimer";
 /* AddViewController */
 "add_name" = "titre";
 "add_description" = "description";
