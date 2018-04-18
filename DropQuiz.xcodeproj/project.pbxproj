@@ -88,6 +88,9 @@
 		B49F0390207C491E002A3355 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B4B1D409207980870053D676 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		B4B52AE0207AB0960006AF5C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		B4BACD1D2086DD4700EEBBA7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		B4BACD1E2086DD4700EEBBA7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B4BACD1F2086DD4700EEBBA7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B4C6355D207ECF740028EA24 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -314,6 +317,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = B42CB0A3207864E5005029E5;
 			productRefGroup = B42CB0AD207864E5005029E5 /* Products */;
@@ -421,6 +425,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B42CB0B4207864E5005029E5 /* Base */,
+				B4BACD1D2086DD4700EEBBA7 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B42CB0B9207864E5005029E5 /* Base */,
+				B4BACD1E2086DD4700EEBBA7 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B49F0390207C491E002A3355 /* en */,
+				B4BACD1F2086DD4700EEBBA7 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -448,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -508,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

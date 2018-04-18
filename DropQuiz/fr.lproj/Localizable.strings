@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  DropQuiz
+*/
+
+/* HomeViewController */
+"home_add" = "créer";
+/* AddViewController */
+"add_name" = "titre";
+"add_description" = "description";
+"add_save_alert_title" = "quiz est final après l'enregistrement";
+"add_save_alert_msg" = "êtes-vous sûr de vouloir enregistrar?";
+"add_save_alert_default" = "enregistrer";
+"add_save_alert_cancel" = "annuler";
+"add_cancel_alert_title" = "changements seront perdus";
+"add_cancel_alert_msg" = "êtes-vous sûr de vouloir annuler?";
+"add_cancel_alert_cancel" = "rester";
+"add_cancel_alert_destructive" = "annuler";
+/* InfoViewController */
+"info_question" = " question";
+"info_questions" = " questions";

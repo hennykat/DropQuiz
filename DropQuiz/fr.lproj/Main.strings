@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "name"; ObjectID = "64e-Nc-RZg"; */
+"64e-Nc-RZg.text" = "titre";
+
+/* Class = "UIButton"; normalTitle = "save"; ObjectID = "Bls-WL-6Qp"; */
+"Bls-WL-6Qp.normalTitle" = "enregistrer";
+
+/* Class = "UILabel"; text = "pick an icon"; ObjectID = "GaC-Xe-yNT"; */
+"GaC-Xe-yNT.text" = "choisissez un icône";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "QZr-HX-Gja"; */
+"QZr-HX-Gja.text" = "description";
+
+/* Class = "UIButton"; normalTitle = "start"; ObjectID = "VU0-bd-Rd5"; */
+"VU0-bd-Rd5.normalTitle" = "démarrer";
+
+/* Class = "UIButton"; normalTitle = "cancel"; ObjectID = "cDo-Fz-zWg"; */
+"cDo-Fz-zWg.normalTitle" = "annuler";
+
+/* Class = "UILabel"; text = "# questions"; ObjectID = "hCV-ZB-kFY"; */
+"hCV-ZB-kFY.text" = "# questions";
+
+/* Class = "UITextField"; placeholder = "name"; ObjectID = "nnx-uH-8Fo"; */
+"nnx-uH-8Fo.placeholder" = "titre";
+
+/* Class = "UILabel"; text = "question"; ObjectID = "qRT-Ti-Vhx"; */
+"qRT-Ti-Vhx.text" = "question";
+
+/* Class = "UILabel"; text = "take a quiz"; ObjectID = "rMJ-pY-LKw"; */
+"rMJ-pY-LKw.text" = "faire un quiz";
+
+/* Class = "UITextField"; placeholder = "description"; ObjectID = "s4r-W4-6pB"; */
+"s4r-W4-6pB.placeholder" = "description";
+
+/* Class = "UILabel"; text = "#"; ObjectID = "wUN-R0-A7l"; */
+"wUN-R0-A7l.text" = "#";
+
+/* Class = "UIButton"; normalTitle = "cancel"; ObjectID = "zOV-0N-v1n"; */
+"zOV-0N-v1n.normalTitle" = "annuler";
