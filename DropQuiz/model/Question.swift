@@ -7,7 +7,7 @@ struct QuestionKey {
     static let hint = "hint"
 }
 
-class Question: NSCoding {
+class Question: NSObject, NSCoding {
 
     let question: String
     let answers: [String]

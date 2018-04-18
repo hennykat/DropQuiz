@@ -11,6 +11,12 @@ class Storage {
         quizListPath = DocumentsDirectory.appendingPathComponent(DocumentPath.QuizListFile).path
     }
     
+    public func addQuiz(quiz: Quiz) {
+        var quizList = loadQuizList() ?? [Quiz]()
+        quizList.append(quiz)
+        saveQuizList(quizList: quizList)
+    }
+    
     public func saveQuizList(quizList: [Quiz]) {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(quizList, toFile: quizListPath)
         if !isSuccessfulSave {

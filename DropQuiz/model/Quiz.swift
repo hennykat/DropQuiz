@@ -3,29 +3,30 @@ import UIKit
 
 struct QuizKey {
     static let name = "name"
-    static let description = "description"
+    static let information = "information"
     static let icon = "icon"
     static let questions = "questions"
 }
 
-class Quiz: NSCoding {
+class Quiz: NSObject, NSCoding {
     
     let name: String
-    let description: String?
+    // description for quiz (description keyword taken)
+    let information: String?
     let icon: UIImage?
     var questions: [Question]
     // question index
     private var index: Int = 0
     
-    init(name: String, description: String?, icon: UIImage?, questions: [Question]) {
+    init(name: String, information: String?, icon: UIImage?, questions: [Question]) {
         self.name = name
-        self.description = description
+        self.information = information
         self.icon = icon
         self.questions = questions
     }
     
     convenience init(name: String, icon: UIImage?) {
-        self.init(name: name, description: nil, icon: icon, questions: [Question]())
+        self.init(name: name, information: nil, icon: icon, questions: [Question]())
     }
     
     func getCurrentQuestion() -> Question? {
@@ -45,7 +46,7 @@ class Quiz: NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: QuizKey.name)
-        aCoder.encode(description, forKey: QuizKey.description)
+        aCoder.encode(information, forKey: QuizKey.information)
         aCoder.encode(icon, forKey: QuizKey.icon)
         aCoder.encode(questions, forKey: QuizKey.questions)
     }
@@ -53,10 +54,10 @@ class Quiz: NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         
         let name = aDecoder.decodeObject(forKey: QuizKey.name) as? String ?? ""
-        let description = aDecoder.decodeObject(forKey: QuizKey.description) as? String
+        let information = aDecoder.decodeObject(forKey: QuizKey.information) as? String
         let icon = aDecoder.decodeObject(forKey: QuizKey.icon) as? UIImage
         let questions = aDecoder.decodeObject(forKey: QuizKey.questions) as? [Question] ?? [Question]()
         
-        self.init(name: name, description: description, icon: icon, questions: questions)
+        self.init(name: name, information: information, icon: icon, questions: questions)
     }
 }

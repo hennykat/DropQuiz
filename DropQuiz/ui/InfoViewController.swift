@@ -108,7 +108,7 @@ class InfoViewController: UIViewController, UICollectionViewDelegate, UICollecti
         iconBackgroundView.layer.cornerRadius = iconBackgroundView.frame.width / 2
         iconImageView.image = infoQuiz.icon ?? UIImage(named: ImageName.Default)
         nameLabel.text = infoQuiz.name
-        descriptionLabel.text = infoQuiz.description ?? ""
+        descriptionLabel.text = infoQuiz.information ?? ""
 
         let numQuestions = infoQuiz.questions.count
         if numQuestions == 1 {

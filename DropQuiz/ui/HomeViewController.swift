@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let testQuestion1 = Question(question: "What is sushi?", answers: ["raw fish", "vegetables", "milk", "monkeys"], index: 0)
         let testQuestion2 = Question(question: "Which is green?", answers: ["tomato", "onion", "lettuce", "nuts"], index: 2)
         let testQuestion3 = Question(question: "Which is food?", answers: ["grass", "dirt", "rocks", "sushi"], index: 3)
-        let testQuiz = Quiz(name: "test", description: "this is a test quiz", icon: UIImage(named: ImageName.Star), questions: [Question]())
+        let testQuiz = Quiz(name: "test", information: "this is a test quiz", icon: UIImage(named: ImageName.Star), questions: [Question]())
         testQuiz.questions.append(testQuestion1)
         testQuiz.questions.append(testQuestion2)
         testQuiz.questions.append(testQuestion3)

@@ -3,6 +3,8 @@ import UIKit
 // TODO: this whole layout needs work
 class AddViewController: UIViewController, UIPopoverPresentationControllerDelegate, IconPickerDelegate {
     
+    private var questionList = [Question]()
+    
     // MARK: IBOutlet
     
     @IBOutlet weak var iconBackgroundView: UIView!
@@ -17,7 +19,10 @@ class AddViewController: UIViewController, UIPopoverPresentationControllerDelega
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        showSaveAlert()
+        
+        if isQuizValid() {
+            showSaveAlert()
+        }
     }
     
     // MARK: UIViewController
@@ -94,7 +99,7 @@ class AddViewController: UIViewController, UIPopoverPresentationControllerDelega
         
         let alert = UIAlertController(title: ViewString.AddSaveAlertTitle, message: ViewString.AddSaveAlertMsg, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: ViewString.AddSaveAlertDefault, style: .default, handler: { action in
-            // TODO: save quiz
+            Storage.shared.addQuiz(quiz: self.makeQuiz())
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: ViewString.AddSaveAlertCancel, style: .cancel, handler: nil))
@@ -109,5 +114,34 @@ class AddViewController: UIViewController, UIPopoverPresentationControllerDelega
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showInvalidAlert(_ message: String) {
+        let alert = UIAlertController(title: ViewString.AddInvalidAlertTitle, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: ViewString.AddInvalidAlertDefault, style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func isQuizValid() -> Bool {
+        
+        // quiz must have questions & title
+        if questionList.isEmpty {
+            showInvalidAlert(ViewString.AddInvalidAlertMsgQuestion)
+            return false
+        } else if nameTextField.text == nil || nameTextField.text!.isEmpty {
+            showInvalidAlert(ViewString.AddInvalidAlertMsgName)
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    func makeQuiz() -> Quiz {
+        
+        let icon = iconImageView.image
+        let name = nameTextField.text ?? ""
+        let information = descriptionTextField.text
+        
+        return Quiz(name: name, information: information, icon: icon, questions: questionList)
     }
 }

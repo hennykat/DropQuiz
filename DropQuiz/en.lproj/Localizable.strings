@@ -16,6 +16,10 @@
 "add_cancel_alert_msg" = "are you sure you want to cancel?";
 "add_cancel_alert_cancel" = "stay";
 "add_cancel_alert_destructive" = "cancel";
+"add_invalid_alert_title" = "invalid quiz";
+"add_invalid_alert_msg_question" = "add a question";
+"add_invalid_alert_msg_name" = "name the quiz";
+"add_invalid_alert_default" = "ok";
 /* InfoViewController */
 "info_question" = " question";
 "info_questions" = " questions";

@@ -58,6 +58,10 @@ class ViewString {
     static let AddCancelAlertMsg = NSLocalizedString("add_cancel_alert_msg", comment: "")
     static let AddCancelAlertCancel = NSLocalizedString("add_cancel_alert_cancel", comment: "")
     static let AddCancelAlertDestructive = NSLocalizedString("add_cancel_alert_destructive", comment: "")
+    static let AddInvalidAlertTitle = NSLocalizedString("add_invalid_alert_title", comment: "")
+    static let AddInvalidAlertMsgQuestion = NSLocalizedString("add_invalid_alert_msg_question", comment: "")
+    static let AddInvalidAlertMsgName = NSLocalizedString("add_invalid_alert_msg_name", comment: "")
+    static let AddInvalidAlertDefault = NSLocalizedString("add_invalid_alert_default", comment: "")
     
     static let InfoQuestion = NSLocalizedString("info_question", comment: "")
     static let InfoQuestions = NSLocalizedString("info_questions", comment: "")

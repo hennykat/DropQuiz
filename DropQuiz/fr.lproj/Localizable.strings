@@ -16,6 +16,10 @@
 "add_cancel_alert_msg" = "êtes-vous sûr de vouloir annuler?";
 "add_cancel_alert_cancel" = "rester";
 "add_cancel_alert_destructive" = "annuler";
+"add_invalid_alert_title" = "quiz invalide";
+"add_invalid_alert_msg_question" = "créer une question";
+"add_invalid_alert_msg_name" = "titre le quiz";
+"add_invalid_alert_default" = "ok";
 /* InfoViewController */
 "info_question" = " question";
 "info_questions" = " questions";
